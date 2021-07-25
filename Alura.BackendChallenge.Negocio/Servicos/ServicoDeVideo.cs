@@ -1,4 +1,5 @@
 ﻿using Alura.BackendChallenge.Dominio.Objetos.VideoObj;
+using Alura.BackendChallenge.Dominio.Validadores.Interfaces;
 using Alura.BackendChallenge.Interfaces.InterfacesDeRepositorio;
 using Alura.BackendChallenge.Interfaces.InterfacesDeServico;
 using Alura.BackendChallenge.Interfaces.Modelos;
@@ -34,7 +35,12 @@ namespace Alura.BackendChallenge.Negocio.Servicos
         {
             var video = _repositorio.Consulte(codigo);
             video.Titulo = novoTitulo;
-            // Validar...
+
+            var validador = Validador();
+            validador.AssineRegrasAtualizacao();
+            validador.Valide(video);
+            validador.AssegureNenhumaInconsistencia();
+
             _repositorio.AtualizeTitulo(video);
         }
 
@@ -47,7 +53,12 @@ namespace Alura.BackendChallenge.Negocio.Servicos
         {
             var video = _repositorio.Consulte(codigo);
             video.Descricao = novaDescricao;
-            // Validar...
+
+            var validador = Validador();
+            validador.AssineRegrasAtualizacao();
+            validador.Valide(video);
+            validador.AssegureNenhumaInconsistencia();
+
             _repositorio.AtualizeDescricao(video);
         }
 
@@ -60,7 +71,12 @@ namespace Alura.BackendChallenge.Negocio.Servicos
         {
             var video = _repositorio.Consulte(codigo);
             video.Url = novaUrl;
-            // Validar...
+
+            var validador = Validador();
+            validador.AssineRegrasAtualizacao();
+            validador.Valide(video);
+            validador.AssegureNenhumaInconsistencia();
+
             _repositorio.AtualizeDescricao(video);
         }
 
@@ -71,6 +87,15 @@ namespace Alura.BackendChallenge.Negocio.Servicos
         protected override IConversor<DtoVideo, Video> Conversor()
         {
             return _conversor ??= new ConversorDeVideo();
+        }
+
+        /// <summary>
+        /// Obtém a instância da classe de validação de vídeo.
+        /// </summary>
+        /// <returns>Uma nova instância do validador de vídeo.</returns>
+        protected override IValidador<Video> Validador()
+        {
+            return new ValidacoesDeVideo(_repositorio);
         }
     }
 }

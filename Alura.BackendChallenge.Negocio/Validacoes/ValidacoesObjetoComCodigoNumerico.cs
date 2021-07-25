@@ -7,8 +7,6 @@ namespace Alura.BackendChallenge.Dominio.Objetos
     public abstract class ValidacoesObjetoComCodigoNumerico<TObjeto> : ValidadorAbstrato<TObjeto>
         where TObjeto : ObjetoComCodigoNumerico
     {
-        public const int TAMANHO_MAXIMO_CODIGO = 6;
-
         #region VALIDACOES DE PROPRIEDADES
 
         #region CODIGO
@@ -17,14 +15,14 @@ namespace Alura.BackendChallenge.Dominio.Objetos
         {
             RuleFor(x => x.Codigo)
                 .NotEmpty()
-                .WithMessage(GloalizacoesDeValidacao.CodigoObrigatorio);
+                .WithMessage(GlobalizacoesDeValidacao.CodigoObrigatorio);
         }
 
         public void AssineRegraCodigoValido()
         {
             RuleFor(x => x.Codigo)
                 .Must(CodigoValido)
-                .WithMessage(GloalizacoesDeValidacao.CodigoValido);
+                .WithMessage(GlobalizacoesDeValidacao.CodigoValido);
         }
 
         #endregion
@@ -35,7 +33,7 @@ namespace Alura.BackendChallenge.Dominio.Objetos
 
         private bool CodigoValido(int codigo)
         {
-            return codigo is > 0 and < 999999;
+            return codigo != 0 && codigo.ToString().Length <= ObjetoComCodigoNumerico.TAMANHO_MAXIMO_CODIGO;
         }
 
         #endregion

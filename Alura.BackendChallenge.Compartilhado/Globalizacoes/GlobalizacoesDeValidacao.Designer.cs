@@ -22,14 +22,14 @@ namespace Alura.BackendChallenge.Compartilhado.Globalizacoes {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class GloalizacoesDeValidacao {
+    public class GlobalizacoesDeValidacao {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal GloalizacoesDeValidacao() {
+        internal GlobalizacoesDeValidacao() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Alura.BackendChallenge.Compartilhado.Globalizacoes {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Alura.BackendChallenge.Compartilhado.Globalizacoes.GloalizacoesDeValidacao", typeof(GloalizacoesDeValidacao).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Alura.BackendChallenge.Compartilhado.Globalizacoes.GlobalizacoesDeValidacao", typeof(GlobalizacoesDeValidacao).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -124,11 +124,38 @@ namespace Alura.BackendChallenge.Compartilhado.Globalizacoes {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo obrigatório Url não foi informado..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo obrigatório URL não foi informado..
         /// </summary>
         public static string UrlObrigatorio {
             get {
                 return ResourceManager.GetString("UrlObrigatorio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo URL deve possuir no máximo 120 caracteres..
+        /// </summary>
+        public static string UrlTamanhoMaximo {
+            get {
+                return ResourceManager.GetString("UrlTamanhoMaximo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Já existe um vídeo cadastrado com o código informado..
+        /// </summary>
+        public static string VideoCadastrado {
+            get {
+                return ResourceManager.GetString("VideoCadastrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Este vídeo não está cadastrado.
+        /// </summary>
+        public static string VideoNaoCadastrado {
+            get {
+                return ResourceManager.GetString("VideoNaoCadastrado", resourceCulture);
             }
         }
     }

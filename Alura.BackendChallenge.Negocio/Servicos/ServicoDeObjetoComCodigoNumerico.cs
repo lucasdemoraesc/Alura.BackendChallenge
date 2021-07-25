@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Alura.BackendChallenge.Dominio.Objetos;
+using Alura.BackendChallenge.Dominio.Validadores.Interfaces;
 using Alura.BackendChallenge.Interfaces.InterfacesDeRepositorio;
 using Alura.BackendChallenge.Interfaces.InterfacesDeServico;
 using Alura.BackendChallenge.Interfaces.Modelos;
@@ -34,7 +35,12 @@ namespace Alura.BackendChallenge.Negocio.Servicos
         public virtual void Cadastre(TDto dto)
         {
             var objeto = Conversor().Converta(dto);
-            // Validar...
+
+            var validador = Validador();
+            validador.AssineRegrasCadastro();
+            validador.Valide(objeto);
+            validador.AssegureNenhumaInconsistencia();
+
             _repositorio.Cadastre(objeto);
         }
 
@@ -77,7 +83,12 @@ namespace Alura.BackendChallenge.Negocio.Servicos
         public virtual void Atualize(TDto dto)
         {
             var objeto = Conversor().ConvertaParaObjetoPersistido(_repositorio, dto);
-            // Validar...
+
+            var validador = Validador();
+            validador.AssineRegrasAtualizacao();
+            validador.Valide(objeto);
+            validador.AssegureNenhumaInconsistencia();
+
             _repositorio.Atualize(objeto);
         }
 
@@ -103,5 +114,11 @@ namespace Alura.BackendChallenge.Negocio.Servicos
         /// </summary>
         /// <returns>Uma nova instância do conversor.</returns>
         protected abstract IConversor<TDto, TObjeto> Conversor();
+
+        /// <summary>
+        /// Obtém a instância da classe de validação do conceito.
+        /// </summary>
+        /// <returns>Uma nova instância do validador.</returns>
+        protected abstract IValidador<TObjeto> Validador();
     }
 }

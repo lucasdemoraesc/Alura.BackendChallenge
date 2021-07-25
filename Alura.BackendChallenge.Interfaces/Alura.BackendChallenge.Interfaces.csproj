@@ -8,4 +8,8 @@
     <ProjectReference Include="..\Alura.BackendChallenge.Dominio\Alura.BackendChallenge.Dominio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.0" />
+  </ItemGroup>
+
 </Project>

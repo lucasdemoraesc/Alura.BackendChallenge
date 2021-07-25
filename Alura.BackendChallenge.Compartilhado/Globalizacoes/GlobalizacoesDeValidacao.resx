@@ -139,6 +139,16 @@
     <value>Uma URL válida deve ser informada.</value>
   </data>
   <data name="UrlObrigatorio" xml:space="preserve">
-    <value>O campo obrigatório Url não foi informado.</value>
+    <value>O campo obrigatório URL não foi informado.</value>
+  </data>
+  <data name="UrlTamanhoMaximo" xml:space="preserve">
+    <value>O campo URL deve possuir no máximo 120 caracteres.</value>
+  </data>
+  <data name="VideoCadastrado" xml:space="preserve">
+    <value>Já existe um vídeo cadastrado com o código informado.</value>
+  </data>
+  <data name="VideoNaoCadastrado" xml:space="preserve">
+    <value>Este vídeo não está cadastrado</value>
+    <comment>.</comment>
   </data>
 </root>

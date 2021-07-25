@@ -5,17 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Globalizacoes\GloalizacoesDeValidacao.Designer.cs">
+    <Compile Update="Globalizacoes\GlobalizacoesDeValidacao.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>GloalizacoesDeValidacao.resx</DependentUpon>
+      <DependentUpon>GlobalizacoesDeValidacao.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Globalizacoes\GloalizacoesDeValidacao.resx">
+    <EmbeddedResource Update="Globalizacoes\GlobalizacoesDeValidacao.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>GloalizacoesDeValidacao.Designer.cs</LastGenOutput>
+      <LastGenOutput>GlobalizacoesDeValidacao.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
