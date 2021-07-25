@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Alura.BackendChallenge.Compartilhado\Alura.BackendChallenge.Compartilhado.csproj" />
+    <ProjectReference Include="..\Alura.BackendChallenge.Dominio\Alura.BackendChallenge.Dominio.csproj" />
+    <ProjectReference Include="..\Alura.BackendChallenge.Interfaces\Alura.BackendChallenge.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
